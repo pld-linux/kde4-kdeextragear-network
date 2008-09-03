@@ -1,14 +1,14 @@
 %define		orgname kdeextragear-network
-%define		snap	818337
+%define		snap	856351
 Summary:	kdeextragear-network
 Summary(pl.UTF-8):	kdeextragear-network
 Name:		kde4-kdeextragear-network
-Version:	4.0.82
+Version:	4.1.64
 Release:	0.%{snap}.1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/unstable/snapshots/%{orgname}-%{snap}.tar.bz2
-# Source0-md5:	5e6bdcf83205a882c12dc0d5220205db
+# Source0-md5:	bc0437894be00fd362375554edc4f472
 URL:		http://extragear.kde.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -43,8 +43,8 @@ Group:		X11/Applications/Networking
 %description -n kde4-kftpgrabber
 KFTPGrabber is a graphical FTP client for KDE. It provides a nice GUI
 for all file transfer operations, it supports encrypted connections
-(both SSL and SFTP), site-to-site (FXP) transfers and complete bookmark
-system.
+(both SSL and SFTP), site-to-site (FXP) transfers and complete
+bookmark system.
 
 %description -n kde4-kftpgrabber -l pl.UTF-8
 KFTPGrabber jest graficznym klientem FTP dla KDE. Wyposażony jest w
@@ -72,11 +72,11 @@ KTorrent to klient BitTorrenta dla KDE.
 
 Główne cechy to:
 - ściąganie plików torrent
-- ograniczanie szybkości uploadu, baczące żeby większość ludzi
-  nie przesyłała nieograniczonej ilości danych                
+- ograniczanie szybkości uploadu, baczące żeby większość ludzi nie
+  przesyłała nieograniczonej ilości danych
 - przeszukiwanie Internetu przy użyciu różnych wyszukiwarek, można
-  nawet dodać własną                                              
-- trackery UDP 
+  nawet dodać własną
+- trackery UDP
 
 KTorrent to klient BitTorrenta dla KDE.
 
@@ -135,7 +135,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/kde4/kftpimportplugin_ncftp.so
 %{_libdir}/libkftpinterfaces.so
 %attr(755,root,root) %{_libdir}/libkftpinterfaces.so.4
-%attr(755,root,root) %{_libdir}/libkftpinterfaces.so.4.1.0
+%attr(755,root,root) %{_libdir}/libkftpinterfaces.so.4.2.0
 %{_desktopdir}/kde4/kftpgrabber.desktop
 %{_datadir}/apps/kftpgrabber
 %{_iconsdir}/hicolor/*/apps/kftpgrabber.png
@@ -148,7 +148,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n kde4-kmldonkey
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kmldonkey
-#%attr(755,root,root) %{_libdir}/liblibkmldonkey.so
+%attr(755,root,root) %{_libdir}/liblibkmldonkey.so
 %attr(755,root,root) %{_libdir}/liblibkmldonkey.so.?
 %attr(755,root,root) %{_libdir}/liblibkmldonkey.so.*.*.*
 %attr(755,root,root) %{_libdir}/kde4/plasma_engine_kmldonkey.so
@@ -159,10 +159,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/plasma-applet-kmldonkey.desktop
 #%{_includedir}/kmldonkey
 
-##############################
-# kio_gopher
-#%attr(755,root,root) %{_libdir}/kde4/kio_gopher.so
-#%{_datadir}/kde4/services/gopher.protocol
+%attr(755,root,root) %{_libdir}/kde4/kio_gopher.so
+%{_datadir}/kde4/services/gopher.protocol
 
 ##############################
 #knewsticker-scripts
@@ -172,13 +170,13 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/ktorrent
 %attr(755,root,root) %{_bindir}/ktupnptest
-#%attr(755,root,root) %{_libdir}/libktupnp.so
+%attr(755,root,root) %{_libdir}/libktupnp.so
 %attr(755,root,root) %{_libdir}/libktupnp.so.?
 %attr(755,root,root) %{_libdir}/libktupnp.so.*.*.*
-#%attr(755,root,root) %{_libdir}/libktcore.so
+%attr(755,root,root) %{_libdir}/libktcore.so
 %attr(755,root,root) %{_libdir}/libbtcore.so.?
 %attr(755,root,root) %{_libdir}/libbtcore.so.*.*.*
-#%attr(755,root,root) %{_libdir}/libbtcore.so
+%attr(755,root,root) %{_libdir}/libbtcore.so
 %attr(755,root,root) %{_libdir}/libktcore.so.?
 %attr(755,root,root) %{_libdir}/libktcore.so.*.*.*
 %attr(755,root,root) %{_libdir}/kde4/ktlogviewerplugin.so
@@ -192,7 +190,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/ktbwschedulerplugin.so
 %attr(755,root,root) %{_libdir}/kde4/ktmediaplayerplugin.so
 %attr(755,root,root) %{_libdir}/kde4/ktinfowidgetplugin.so
-              
+%attr(755,root,root) %{_libdir}/kde4/plasma_applet_ktorrent.so
+%attr(755,root,root) %{_libdir}/kde4/plasma_engine_ktorrent.so
+
+%{_datadir}/kde4/services/plasma-applet-ktorrent.desktop
+%{_datadir}/kde4/services/plasma-dataengine-ktorrent.desktop
 %{_datadir}/apps/ktorrent
 %{_desktopdir}/kde4/ktorrent.desktop
 
@@ -210,4 +212,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/servicetypes/ktorrentplugin.desktop
 
 %{_iconsdir}/hicolor/*/actions/kt-*.png
-#%{_includedir}/libbtcore
+%{_iconsdir}/hicolor/*/apps/ktorrent.png
+%{_includedir}/libbtcore
