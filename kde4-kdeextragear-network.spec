@@ -1,14 +1,14 @@
 %define		orgname kdeextragear-network
-%define		snap	856351
+%define		snap	868045		
 Summary:	kdeextragear-network
 Summary(pl.UTF-8):	kdeextragear-network
 Name:		kde4-kdeextragear-network
-Version:	4.1.64
+Version:	4.1.69
 Release:	0.%{snap}.1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/unstable/snapshots/%{orgname}-%{snap}.tar.bz2
-# Source0-md5:	bc0437894be00fd362375554edc4f472
+# Source0-md5:	39669233c9d4230c76dc5f361fef71f3
 URL:		http://extragear.kde.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -157,6 +157,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kmldonkey
 %{_datadir}/kde4/services/plasma-engine-kmldonkey.desktop
 %{_datadir}/kde4/services/plasma-applet-kmldonkey.desktop
+%{_iconsdir}/hicolor/*/apps/kmldonkey.png
 #%{_includedir}/kmldonkey
 
 %attr(755,root,root) %{_libdir}/kde4/kio_gopher.so
@@ -164,7 +165,7 @@ rm -rf $RPM_BUILD_ROOT
 
 ##############################
 #knewsticker-scripts
-#%{_datadir}/apps/knewsticker
+%{_datadir}/apps/knewsticker
 
 %files -n  kde4-ktorrent
 %defattr(644,root,root,755)
