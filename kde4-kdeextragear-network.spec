@@ -1,14 +1,14 @@
 %define		orgname kdeextragear-network
-%define		snap	871391	
+%define		snap	886255	
 Summary:	kdeextragear-network
 Summary(pl.UTF-8):	kdeextragear-network
 Name:		kde4-kdeextragear-network
-Version:	4.1.70
+Version:	4.1.73
 Release:	0.%{snap}.1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/unstable/snapshots/%{orgname}-%{snap}.tar.bz2
-# Source0-md5:	339278122b8efa5b4df2a605df48e5d1
+# Source0-md5:	8795a64360a279a41643e446c573faad
 URL:		http://extragear.kde.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -186,7 +186,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/kde4/ktwebinterfaceplugin.so
 %attr(755,root,root) %{_libdir}/kde4/ktupnpplugin.so
 %attr(755,root,root) %{_libdir}/kde4/ktscanfolderplugin.so
-%attr(755,root,root) %{_libdir}/kde4/ktbitfinderplugin.so
+#%attr(755,root,root) %{_libdir}/kde4/ktbitfinderplugin.so
 %attr(755,root,root) %{_libdir}/kde4/ktipfilterplugin.so
 %attr(755,root,root) %{_libdir}/kde4/ktbwschedulerplugin.so
 %attr(755,root,root) %{_libdir}/kde4/ktmediaplayerplugin.so
@@ -205,7 +205,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kde4/services/ktwebinterfaceplugin.desktop
 %{_datadir}/kde4/services/ktupnpplugin.desktop
 %{_datadir}/kde4/services/ktscanfolderplugin.desktop
-%{_datadir}/kde4/services/ktbitfinderplugin.desktop
+#%{_datadir}/kde4/services/ktbitfinderplugin.desktop
 %{_datadir}/kde4/services/ktipfilterplugin.desktop
 %{_datadir}/kde4/services/ktbwschedulerplugin.desktop
 %{_datadir}/kde4/services/ktmediaplayerplugin.desktop
