@@ -1,14 +1,14 @@
 %define		orgname kdeextragear-network
-%define		snap	886255	
+%define		snap	891737	
 Summary:	kdeextragear-network
 Summary(pl.UTF-8):	kdeextragear-network
 Name:		kde4-kdeextragear-network
-Version:	4.1.73
+Version:	4.1.81
 Release:	0.%{snap}.1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/unstable/snapshots/%{orgname}-%{snap}.tar.bz2
-# Source0-md5:	8795a64360a279a41643e446c573faad
+# Source0-md5:	6b126d8bc67de4233ab34910ab91b45a
 URL:		http://extragear.kde.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
