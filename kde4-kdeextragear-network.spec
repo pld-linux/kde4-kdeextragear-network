@@ -98,9 +98,10 @@ KMLDonkey to klient dla sieci P2P mldonkey.
 install -d build
 cd build
 %cmake \
-		-DCMAKE_INSTALL_PREFIX=%{_prefix} \
-		-LCMS_DIR=%{_libdir} \
-		../
+	-DCMAKE_BUILD_TYPE=%{!?debug:Release}%{?debug:Debug} \
+	-DCMAKE_INSTALL_PREFIX=%{_prefix} \
+	-LCMS_DIR=%{_libdir} \
+	../
 %{__make}
 
 %install
