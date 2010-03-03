@@ -4,14 +4,21 @@ Summary:	kdeextragear-network
 Summary(pl.UTF-8):	kdeextragear-network
 Name:		kde4-kdeextragear-network
 Version:	4.4.0
-Release:	0.%{snap}.0.1
+Release:	0.%{snap}.0.2
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/unstable/snapshots/%{orgname}-%{snap}.tar.bz2
 # Source0-md5:	63864be471e113d23210c15a51e97b0c
 URL:		http://extragear.kde.org/
+BuildRequires:	automoc4
 BuildRequires:	cmake
 BuildRequires:	kde4-kdelibs-devel
+BuildRequires:	kde4-kdenetwork-devel
+BuildRequires:	kde4-kdepim-devel
+BuildRequires:	kde4-kdepimlibs-devel
+BuildRequires:	Qt3Support-devel
+BuildRequires:	QtSvg-devel
+
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -138,7 +145,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/kde4/kftpimportplugin_ncftp.so
 %{_libdir}/libkftpinterfaces.so
 %attr(755,root,root) %{_libdir}/libkftpinterfaces.so.4
-%attr(755,root,root) %{_libdir}/libkftpinterfaces.so.4.2.0
+#%attr(755,root,root) %{_libdir}/libkftpinterfaces.so.4.2.0
 %{_desktopdir}/kde4/kftpgrabber.desktop
 %{_datadir}/apps/kftpgrabber
 %{_iconsdir}/hicolor/*/apps/kftpgrabber.png
@@ -171,50 +178,50 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/knewsticker
 
 %files -n  kde4-ktorrent
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/ktorrent
-%attr(755,root,root) %{_bindir}/ktupnptest
-%attr(755,root,root) %{_libdir}/libktupnp.so
-%attr(755,root,root) %{_libdir}/libktupnp.so.?
-%attr(755,root,root) %{_libdir}/libktupnp.so.*.*.*
-%attr(755,root,root) %{_libdir}/libktcore.so
-%attr(755,root,root) %{_libdir}/libbtcore.so.?
-%attr(755,root,root) %{_libdir}/libbtcore.so.*.*.*
-%attr(755,root,root) %{_libdir}/libbtcore.so
-%attr(755,root,root) %{_libdir}/libktcore.so.?
-%attr(755,root,root) %{_libdir}/libktcore.so.*.*.*
-%attr(755,root,root) %{_libdir}/kde4/ktlogviewerplugin.so
-%attr(755,root,root) %{_libdir}/kde4/ktsearchplugin.so
-%attr(755,root,root) %{_libdir}/kde4/ktstatsplugin.so
-%attr(755,root,root) %{_libdir}/kde4/ktwebinterfaceplugin.so
-%attr(755,root,root) %{_libdir}/kde4/ktupnpplugin.so
-%attr(755,root,root) %{_libdir}/kde4/ktscanfolderplugin.so
+#%defattr(644,root,root,755)
+#%attr(755,root,root) %{_bindir}/ktorrent
+#%attr(755,root,root) %{_bindir}/ktupnptest
+#%attr(755,root,root) %{_libdir}/libktupnp.so
+#%attr(755,root,root) %{_libdir}/libktupnp.so.?
+#%attr(755,root,root) %{_libdir}/libktupnp.so.*.*.*
+#%attr(755,root,root) %{_libdir}/libktcore.so
+#%attr(755,root,root) %{_libdir}/libbtcore.so.?
+#%attr(755,root,root) %{_libdir}/libbtcore.so.*.*.*
+#%attr(755,root,root) %{_libdir}/libbtcore.so
+#attr(755,root,root) %{_libdir}/libktcore.so.?
+#%attr(755,root,root) %{_libdir}/libktcore.so.*.*.*
+#%attr(755,root,root) %{_libdir}/kde4/ktlogviewerplugin.so
+#%attr(755,root,root) %{_libdir}/kde4/ktsearchplugin.so
+#%attr(755,root,root) %{_libdir}/kde4/ktstatsplugin.so
+#%attr(755,root,root) %{_libdir}/kde4/ktwebinterfaceplugin.so
+#%attr(755,root,root) %{_libdir}/kde4/ktupnpplugin.so
+#%attr(755,root,root) %{_libdir}/kde4/ktscanfolderplugin.so
 #%attr(755,root,root) %{_libdir}/kde4/ktbitfinderplugin.so
-%attr(755,root,root) %{_libdir}/kde4/ktipfilterplugin.so
-%attr(755,root,root) %{_libdir}/kde4/ktbwschedulerplugin.so
-%attr(755,root,root) %{_libdir}/kde4/ktmediaplayerplugin.so
-%attr(755,root,root) %{_libdir}/kde4/ktinfowidgetplugin.so
-%attr(755,root,root) %{_libdir}/kde4/plasma_applet_ktorrent.so
-%attr(755,root,root) %{_libdir}/kde4/plasma_engine_ktorrent.so
+#%attr(755,root,root) %{_libdir}/kde4/ktipfilterplugin.so
+#%attr(755,root,root) %{_libdir}/kde4/ktbwschedulerplugin.so
+#%attr(755,root,root) %{_libdir}/kde4/ktmediaplayerplugin.so
+#%attr(755,root,root) %{_libdir}/kde4/ktinfowidgetplugin.so
+#%attr(755,root,root) %{_libdir}/kde4/plasma_applet_ktorrent.so
+#%attr(755,root,root) %{_libdir}/kde4/plasma_engine_ktorrent.so
 
-%{_datadir}/kde4/services/plasma-applet-ktorrent.desktop
-%{_datadir}/kde4/services/plasma-dataengine-ktorrent.desktop
-%{_datadir}/apps/ktorrent
-%{_desktopdir}/kde4/ktorrent.desktop
+#%{_datadir}/kde4/services/plasma-applet-ktorrent.desktop
+#%{_datadir}/kde4/services/plasma-dataengine-ktorrent.desktop
+#%{_datadir}/apps/ktorrent
+#%{_desktopdir}/kde4/ktorrent.desktop
 
-%{_datadir}/kde4/services/ktlogviewerplugin.desktop
-%{_datadir}/kde4/services/ktsearchplugin.desktop
-%{_datadir}/kde4/services/ktstatsplugin.desktop
-%{_datadir}/kde4/services/ktwebinterfaceplugin.desktop
-%{_datadir}/kde4/services/ktupnpplugin.desktop
-%{_datadir}/kde4/services/ktscanfolderplugin.desktop
+#%{_datadir}/kde4/services/ktlogviewerplugin.desktop
+#%{_datadir}/kde4/services/ktsearchplugin.desktop
+#%{_datadir}/kde4/services/ktstatsplugin.desktop
+#%{_datadir}/kde4/services/ktwebinterfaceplugin.desktop
+#%{_datadir}/kde4/services/ktupnpplugin.desktop
+#%{_datadir}/kde4/services/ktscanfolderplugin.desktop
 #%{_datadir}/kde4/services/ktbitfinderplugin.desktop
-%{_datadir}/kde4/services/ktipfilterplugin.desktop
-%{_datadir}/kde4/services/ktbwschedulerplugin.desktop
-%{_datadir}/kde4/services/ktmediaplayerplugin.desktop
-%{_datadir}/kde4/services/ktinfowidgetplugin.desktop
-%{_datadir}/kde4/servicetypes/ktorrentplugin.desktop
+#%{_datadir}/kde4/services/ktipfilterplugin.desktop
+#%{_datadir}/kde4/services/ktbwschedulerplugin.desktop
+#%{_datadir}/kde4/services/ktmediaplayerplugin.desktop
+#%{_datadir}/kde4/services/ktinfowidgetplugin.desktop
+#%{_datadir}/kde4/servicetypes/ktorrentplugin.desktop
 
-%{_iconsdir}/hicolor/*/actions/kt-*.png
-%{_iconsdir}/hicolor/*/apps/ktorrent.png
-%{_includedir}/libbtcore
+#%{_iconsdir}/hicolor/*/actions/kt-*.png
+#%{_iconsdir}/hicolor/*/apps/ktorrent.png
+#%{_includedir}/libbtcore
