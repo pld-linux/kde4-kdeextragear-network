@@ -1,10 +1,16 @@
+# TODO: shadow .so.* ?
+# TODO: add knemo
+# TODO: add kopete plugins/scripts ?
+# TODO: pack *.h to devel ?
+# TODO: Fix rest of files
+
 %define		orgname kdeextragear-network
 %define		snap	1095148
 Summary:	kdeextragear-network
 Summary(pl.UTF-8):	kdeextragear-network
 Name:		kde4-kdeextragear-network
 Version:	4.4.0
-Release:	0.%{snap}.0.2
+Release:	0.%{snap}.1
 License:	GPL v2+
 Group:		X11/Libraries
 Source0:	ftp://ftp.kde.org/pub/kde/unstable/snapshots/%{orgname}-%{snap}.tar.bz2
@@ -26,6 +32,21 @@ kdeextragear-network.
 
 %description -l pl.UTF-8
 kdeextragear-network.
+
+
+%package -n kde4-choqok
+Summary:	micro-blogging client
+Summary(pl.UTF-8):	Klient dla sieci mikroblogowania
+Group:		X11/Applications/Networking
+
+%description -n kde4-choqok
+Choqok is a Free/Open Source micro-blogging client for K Desktop Environment.
+Currently supports Twitter.com and Identi.ca services
+
+%description -n kde4-choqok -l pl.UTF-8
+Choqok to otwarty klient dla mikroblogowania dla KDE.
+Aktualnie wspiera Twitter.com i Identi.ca.
+
 
 %package -n kde4-kwlan
 Summary:	KDE frontend for WPA Supplicant
@@ -100,6 +121,8 @@ KMLDonkey is a client for the mldonkey P2P network.
 %description -n kde4-kmldonkey -l pl.UTF-8
 KMLDonkey to klient dla sieci P2P mldonkey.
 
+
+
 %prep
 %setup -q -n %{orgname}-%{snap}
 
@@ -127,6 +150,25 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%files -n kde4-choqok
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/choqok
+%{_desktopdir}/kde4/choqok.desktop
+%{_datadir}/apps/choqok
+%{_datadir}/kde4/services/choqok_*.desktop
+%{_datadir}/kde4/servicetypes/choqok*.desktop
+%{_iconsdir}/hicolor/*/apps/choqok.png
+%{_libdir}/kde4/choqok_*.so
+%{_libdir}/kde4/kcm_choqok_*.so
+%{_libdir}/libchoqok.so
+%attr(755,root,root) %{_libdir}/libchoqok.so.0
+%attr(755,root,root) %{_libdir}/libchoqok.so.0.9.4
+%{_libdir}/libtwitterapihelper.so
+%attr(755,root,root) %{_libdir}/libtwitterapihelper.so.0
+%attr(755,root,root) %{_libdir}/libtwitterapihelper.so.0.6
+ 
+
+
 %files -n kde4-kwlan
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/kwlan
@@ -145,7 +187,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/kde4/kftpimportplugin_ncftp.so
 %{_libdir}/libkftpinterfaces.so
 %attr(755,root,root) %{_libdir}/libkftpinterfaces.so.4
-#%attr(755,root,root) %{_libdir}/libkftpinterfaces.so.4.2.0
+%attr(755,root,root) %{_libdir}/libkftpinterfaces.so.4.4.0
 %{_desktopdir}/kde4/kftpgrabber.desktop
 %{_datadir}/apps/kftpgrabber
 %{_iconsdir}/hicolor/*/apps/kftpgrabber.png
